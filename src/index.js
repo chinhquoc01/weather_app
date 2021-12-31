@@ -31,7 +31,7 @@ async function getWeather(city, metric){
   try{
     let response
     getPosition(city).then(async (pos)=>{
-      console.log(pos);
+      // console.log(pos);
       if(!metric) {
 
         response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.lat}&lon=${pos.lon}&appid=4f9643411dff19c1ecb502653bb56ef3&exclude=hourly,minutely&units=metric`)
@@ -40,7 +40,7 @@ async function getWeather(city, metric){
         response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.lat}&lon=${pos.lon}&appid=4f9643411dff19c1ecb502653bb56ef3&exclude=hourly,minutely`)
       }
       if(!response.ok) {
-        console.log('loi roi');
+        // console.log('loi roi');
         Toastify({
           text: "Invalid city name",
         
@@ -51,7 +51,7 @@ async function getWeather(city, metric){
       }
       else{
         const data = await response.json()
-        console.log(data);
+        // console.log(data);
         getDaily(data)
         time.querySelector('.date').textContent = getDateFromDT(data.current.dt).date
         time.querySelector('.hour').textContent = getDateFromDT(data.current.dt).hour
@@ -71,7 +71,7 @@ async function getWeather(city, metric){
 
   }
   catch (e) {
-    console.log('heheh')
+    console.log(e)
   }
 }
 
@@ -108,7 +108,7 @@ async function getPosition(city){
 }
 
 function getDaily(data){
-  console.log(data.daily);
+  // console.log(data.daily);
   daily.innerHTML = ''
   let dailyWeather = data.daily
   if(tempCheck.checked){
