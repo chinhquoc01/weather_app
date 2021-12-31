@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="search">
+        <input type="text" placeholder="City" id="input_city">
+        <!-- Rounded switch -->
+        <div class="temp_mode">
+            <span>&degC</span>
+            <label class="switch">
+                <input type="checkbox" id="temp_check">
+                <span class="slider round"></span>
+            </label>
+            <span>&degF</span>
+        </div>
+    </div>
+
+    <div class="overview">
+        <h2 class="city_name"></h2>
+        <div class="time">
+            <div class="date"></div>
+            <div class="hour"></div>
+        </div>
+
+        <div class="weather_overview">
+            <div class="left_overview">
+                <div class="temp">
+                </div>
+                <div class="humidity container">
+                    <div class="humidity_icon" style="margin-right: 5px;"></div>
+                    <div class="humidity_content"></div>
+                </div>
+                <div class="wind_speed container">
+                    <div class="wind_speed_icon" style="margin-right: 5px;"></div>
+                    <div class="wind_speed_content"></div>
+                </div>
+            </div>
+            
+            <div class="right_overview">
+                <div class="weather_img"></div>
+                <div class="weather_main"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="daily"></div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
